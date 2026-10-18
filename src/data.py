@@ -81,7 +81,7 @@ def clean(df: pd.DataFrame, seed: int = 0) -> pd.DataFrame:
         for lbl in (0, 1):
             idx = df.index[df["label"] == lbl].to_numpy().copy()
             rng.shuffle(idx)
-            df.loc[idx[: int(round(0.25 * len(idx)))], "split"] = "test"
+            df.loc[idx[: round(0.25 * len(idx))], "split"] = "test"
     df.loc[~df["split"].isin(["train", "test"]), "split"] = "train"
     return df.drop(columns="key").reset_index(drop=True)
 

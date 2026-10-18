@@ -40,7 +40,7 @@ def fake_ollama(monkeypatch, tmp_path):
         text = json["messages"][1]["content"]
         calls.append(text)
         prob = 95 if "omega" in text else 5
-        return FakeResponse('{"injection_probability": %d}' % prob)
+        return FakeResponse(f'{{"injection_probability": {prob}}}')
 
     monkeypatch.setattr(llm_judge.requests, "post", post)
     monkeypatch.setattr(llm_judge, "CACHE_DIR", tmp_path)
