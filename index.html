@@ -37,7 +37,8 @@ header.top .wrap{display:flex;align-items:center;gap:24px;height:58px}
 .brand{font-weight:600;text-decoration:none;white-space:nowrap}
 nav{display:flex;gap:20px;margin-left:auto;font-size:15px}
 nav a{text-decoration:none;color:var(--ink-2)} nav a:hover{color:var(--ink)}
-@media (max-width:760px){nav{display:none}}
+@media (max-width:760px){nav{display:none}.push{margin-left:auto}}
+header.top .wrap{gap:12px}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;border:1px solid var(--line);text-decoration:none;font-size:15px;font-weight:500;background:var(--raised)}
 .btn:hover{border-color:var(--muted)}
 .hero{padding-top:72px;padding-bottom:40px}
@@ -45,6 +46,8 @@ nav a{text-decoration:none;color:var(--ink-2)} nav a:hover{color:var(--ink)}
 h1{font-size:clamp(32px,5vw,52px);line-height:1.08;letter-spacing:-.02em;margin:0 0 20px;max-width:17ch}
 .lede{font-size:clamp(17px,2vw,20px);color:var(--ink-2);max-width:62ch;margin:0 0 28px}
 .actions{display:flex;flex-wrap:wrap;gap:12px}
+.byline{margin:22px 0 0;font-size:15px;color:var(--ink-2)}
+@media (max-width:600px){header.top .btn{padding:6px 10px;font-size:13px}.brand{font-size:14px}header.top .wrap{gap:8px}}
 section{padding:48px 0;border-top:1px solid var(--line)}
 h2{font-size:clamp(24px,3vw,32px);letter-spacing:-.01em;line-height:1.2;margin:0 0 12px}
 h3{font-size:18px;margin:0 0 6px}
@@ -94,6 +97,7 @@ footer{padding:36px 0 56px;border-top:1px solid var(--line);color:var(--muted);f
 <header class="top"><div class="wrap">
   <a class="brand" href="#">Prompt Injection Detector</a>
   <nav><a href="#findings">Findings</a><a href="#gap">Generalisation</a><a href="#cost">Speed vs accuracy</a><a href="#cascade">Cascade</a><a href="#table">All results</a><a href="#method">Method</a></nav>
+  <a class="btn push" href="https://www.linkedin.com/in/ziya-azizov-91bba638a">LinkedIn</a>
   <a class="btn" href="https://github.com/ziko-asm/prompt-injection-detector">GitHub</a>
 </div></header>
 
@@ -106,6 +110,7 @@ footer{padding:36px 0 56px;border-top:1px solid var(--line);color:var(--muted);f
     <a class="btn" href="#gap">See the gap</a>
     <a class="btn" href="results/results.json">Raw results.json</a>
   </div>
+  <p class="byline">By <b>Ziya Azizov</b>, ML security engineer · <a href="https://www.linkedin.com/in/ziya-azizov-91bba638a">LinkedIn</a> · <a href="https://github.com/ziko-asm">GitHub</a></p>
 </div>
 
 <div class="wrap" style="padding-bottom:40px"><div class="tiles" id="tiles"></div></div>

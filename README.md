@@ -1,5 +1,9 @@
 # Prompt Injection Detector
 
+[![CI](https://github.com/ziko-asm/prompt-injection-detector/actions/workflows/ci.yml/badge.svg)](https://github.com/ziko-asm/prompt-injection-detector/actions/workflows/ci.yml)
+
+**Live results page:** https://prompt-injection-detector-snowy.vercel.app
+
 How well can cheap, local detectors spot prompt injection in text, and do they still work on data from a different source?
 
 This project compares detectors of increasing cost on public, labelled datasets of benign and prompt-injection text:
@@ -42,7 +46,7 @@ python -m src.evaluate --detectors transformer cascade
 LLM rows are added to the existing results; answers are cached in `cache/`, so a re-run is instant.
 
 ## Results
-F1 at threshold 0.5. For the LLM judges (never trained) the first two columns are simply their score on each test set. Full metrics (precision, recall, false positive rate, ROC-AUC) are in [`results/results.json`](results/results.json) and on the [project page](index.html).
+F1 at threshold 0.5. For the LLM judges (never trained) the first two columns are simply their score on each test set. Full metrics (precision, recall, false positive rate, ROC-AUC) are in [`results/results.json`](results/results.json) and on the [project page](https://prompt-injection-detector-snowy.vercel.app).
 
 | Detector | deepset → deepset | jackhhao → jackhhao | deepset → jackhhao | jackhhao → deepset | both → deepset | both → jackhhao | time / text |
 |---|---|---|---|---|---|---|---|
