@@ -66,4 +66,4 @@ F1 at threshold 0.5. For the LLM judges (never trained) the first two columns ar
 
 **Limitations:** small test sets (116 and 257 texts), one seed per model, two sources, and the LLM judge itself was not attacked.
 
-By [Ziya Azizov](https://www.linkedin.com/in/ziya-azizov-91bba638a).
+By [Ziya Azizov (ayfar)](https://ayfar.vercel.app) · [LinkedIn](https://www.linkedin.com/in/ziya-azizov-91bba638a).
