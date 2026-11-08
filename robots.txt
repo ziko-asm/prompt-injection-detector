@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://prompt-injection-detector-snowy.vercel.app/sitemap.xml
