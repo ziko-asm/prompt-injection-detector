@@ -34,6 +34,7 @@ pip install -r requirements.txt
 pytest -q                      # pipeline tests on a synthetic corpus
 python -m src.data             # download and print dataset statistics
 python -m src.evaluate         # benchmark -> results/results.json
+python tools/prerender.py       # bake the new results into index.html (needs Chrome or Edge)
 
 # local LLM judges (needs Ollama running and the models pulled)
 python -m src.llm_judge --check

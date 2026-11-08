@@ -13,11 +13,15 @@ function showTip(evt, html){ tip.innerHTML=html; tip.style.opacity=1; const x=Ma
 function hideTip(){ tip.style.opacity=0; }
 
 fetch("results/results.json").then(r=>r.json()).then(render).catch(e=>{
+  // index.html ships a pre-rendered snapshot; only show the error when there is nothing to show.
+  if (document.getElementById("tiles").children.length) { console.error(e); return; }
   document.getElementById("tiles").innerHTML='<p class="err">Could not load results/results.json ('+e+'). Run python -m src.evaluate first.</p>';
 });
 
 function render(R){
   const rows = R.results, meta = R.meta;
+  // Containers below are appended to, so drop the pre-rendered snapshot first (same task: no paint in between).
+  ["gapChart","costChart","filters"].forEach(id=>document.getElementById(id).replaceChildren());
   const get = (d,tr,te) => rows.find(r=>r.detector===d && r.train===tr && r.test===te);
   const tests = meta.datasets.map(d=>d.dataset);
   const mean = a => a.reduce((s,x)=>s+x,0)/a.length;
